@@ -11,4 +11,4 @@ Neste repositório está hospedado o client para acesso as informações.
 
 ## 💻 Screenshots
 
-[![screenshot.png]https://raw.githubusercontent.com/leonardotandeli/laps-viewer/main/screenshot.png)](https://raw.githubusercontent.com/leonardotandeli/laps-viewer/main/screenshot.png)
+[![screenshot.png](https://raw.githubusercontent.com/leonardotandeli/laps-viewer/main/screenshot.png)](https://raw.githubusercontent.com/leonardotandeli/laps-viewer/main/screenshot.png)
