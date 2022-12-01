@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"lapsv/config"
 	"lapsv/src/controllers"
 	"lapsv/src/database"
 	"lapsv/src/models"
@@ -40,7 +41,9 @@ func Clear() {
 }
 
 func main() {
+	config.CarregarConfiguracao()
 	//inicia conexão com o banco de dados.
+
 	database.Dbconnection()
 
 	//imprime as informações na tela
@@ -55,7 +58,7 @@ func main() {
 	fmt.Println("")
 
 	//scan dos dados digitados
-	fmt.Print("Informe o Ativo para busca: ")
+	fmt.Print("Informe o hostname para busca: ")
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
 		scanAtivo(scanner.Text())
@@ -78,11 +81,11 @@ func scanAtivo(hostname string) {
 	fmt.Println("")
 	fmt.Println(" ___________________________________________________________________ ")
 	fmt.Println("|                                                                   | ")
-	fmt.Println("               ATIVO INFORMADO PARA BUSCA: " + hostname)
+	fmt.Println("            HOSTNAME INFORMADO PARA BUSCA: " + hostname)
 	fmt.Println("|___________________________________________________________________| ")
 	fmt.Println("")
 
-	fmt.Println("Senha armazenada no AD: " + controllers.ConsultaLAPS(hostname))
+	fmt.Println("Senha obtida no AD: " + controllers.ConsultaLAPS(hostname))
 	fmt.Println("____________________________________________________________________ ")
 	fmt.Println("")
 	var ativo models.Ativo
@@ -106,5 +109,5 @@ func scanAtivo(hostname string) {
 	}
 
 	fmt.Println("")
-	fmt.Print("Informe o Ativo para busca: ")
+	fmt.Print("Informe o hostname para busca: ")
 }
